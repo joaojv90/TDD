@@ -17,24 +17,16 @@ class TddApplicationTests {
 //		- If none of the above conditions are true, then return the given number
 
 	//@Test
-	void contextLoads() {
+	void contextLoads() {	
 		
-			
 	}
 	
-//	public int checkFizzBuzz (int num1) {
-////		Scanner sc = new Scanner(System.in);
-////		System.out.println("Ingrese un número: ");
-////		int i1 = sc.nextInt();
-//		if (num1%3==0) {
-//			System.out.println("Fizz");			
-//		}
-//		return num1;
-//	}
 	public String checkNum (int [] nums) {
-		if (nums[0]%3==0) {
+		if (nums[0]%3==0 && nums[0]%5==0) {
+			return "FizzBuzz";
+		}else if(nums[0]%3==0){
 			return "Fizz";
-		}else if(nums[0]%5==0){
+		}else if(nums[0]%5==0) {
 			return "Buzz";
 		}
 		return null;
@@ -42,12 +34,12 @@ class TddApplicationTests {
 
 	@Test
 	void testFizz () {
-		int myArr [] = {3};
+		int myArr [] = {15};
+		assertEquals("FizzBuzz", checkNum(myArr));
+		myArr [0] = 3;
 		assertEquals("Fizz", checkNum(myArr));
 		myArr [0] = 5;
 		assertEquals("Buzz", checkNum(myArr));
-		myArr [0] = 15;
-		assertEquals("FizzBuzz", checkNum(myArr));
 	}
 
 }
